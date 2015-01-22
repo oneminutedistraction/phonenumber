@@ -5,12 +5,12 @@ PhoneNumber.prototype.get = function(success, failure) {
 	failure = failure || function() {};
 
 	if (!PhoneNumber._isFunction(success)) {
-		console.log("phonenumber.get(): " + success + " callback must be a function);
+		console.log("phonenumber.get(): " + success + " callback must be a function");
 		return;
 	}
 
 	if (!PhoneNmber._isFunction(failure)) {
-		console.log("phonenumber.get(): " + failure + " callback must be a function);
+		console.log("phonenumber.get(): " + failure + " callback must be a function");
 		return;
 	}
 
