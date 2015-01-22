@@ -1,0 +1,43 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		id="at.oneminutedistraction.phonenumber" version="0.0.1">
+
+	<name>Telephone Number</name>
+
+	<description>
+		This plugin allows your application get the device's phone number  
+	</description>
+
+	<license>Apache 2.0</license>
+
+	<js-module src="www/phonenumber.js" name="PhoneNumber">
+		<clobbers target="phonenumber" />
+	</js-module>
+
+	<engines>
+		<engine name="cordova" version=">=3.0.0"/>
+	</engines>
+
+	<!-- Android only -->
+	<platform name="android">
+
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="PhoneNumberPlugin">
+				<param name="android-package" 
+						value="at.oneminutedistraction.phonenumber.PhoneNumberPlugin"/>
+			</feature>
+		</config-file>
+
+		<config-file target="AndroidManifest.xml" parent="/manifest">
+			<!-- Permission to read phone number -->
+			<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+		</config-file>
+
+		<source-file src="src/android/at/oneminutedistraction/phonenumber/PhoneNumberPlugin.java" 
+				target-dir="src/at/oneminutedistraction/phonenumber"/> 
+
+	</platform>
+
+</plugin>
