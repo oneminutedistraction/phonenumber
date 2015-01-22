@@ -9,7 +9,7 @@ PhoneNumber.prototype.get = function(success, failure) {
 		return;
 	}
 
-	if (!PhoneNmber._isFunction(failure)) {
+	if (!PhoneNumber._isFunction(failure)) {
 		console.log("phonenumber.get(): " + failure + " callback must be a function");
 		return;
 	}

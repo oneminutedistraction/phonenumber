@@ -26,7 +26,7 @@ public class PhoneNumberPlugin extends CordovaPlugin {
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 
         if (!GET_METHOD.equals(action)) {
-            callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.INVALID_ACTION));
+            callbackContext.error("No such method: " + action);
             return (false);
         }
 
@@ -34,8 +34,10 @@ public class PhoneNumberPlugin extends CordovaPlugin {
             TelephonyManager tMgr = (TelephonyManager)this.cordova.getActivity().getSystemService(Context.TELEPHONY_SERVICE);
             String number = tMgr.getLine1Number();
             if ((null == number) || (number.trim().length() <= 0))
-                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.NO_RESULT));
-            callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, number));
+				callbackContext.error("Phone number is not available on this device");
+
+			Log.i(TAG, "Number is " + number);
+            callbackContext.success(number);
         } catch (Throwable t) {
             Log.e(TAG, "Getting phone number", t);
         }
