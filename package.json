@@ -1,0 +1,41 @@
+{
+  "name": "phonenumber",
+  "version": "1.0.0",
+  "description": "Cordova plugin for getting an Android device's phone number",
+  "cordova": {
+    "id": "phonenumber",
+    "platforms": [
+      "android",
+      "ios",
+      "wp7",
+      "wp8",
+      "windows"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oneminutedistraction/phonenumber.git"
+  },
+  "keywords": [
+    "cordova",
+    "phonenumber",
+    "telephonenumber",
+    "imei",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "cordova-windows"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "author": "oneminutedistraction",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oneminutedistraction/phonenumber/issues"
+  },
+  "homepage": "https://github.com/oneminutedistraction/phonenumber#readme"
+}
